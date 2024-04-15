@@ -24,9 +24,6 @@ spring:
       
 
 
-  graphql:
-    path: "/graph-books"
-    graphiql:
-      enabled: true
+
     
 
