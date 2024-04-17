@@ -2,7 +2,7 @@ server:
   port: 9012
 spring:
   application:
-    name: security-demo
+    name: DSA-PRACTICE
 
   mvc:
     view:
@@ -21,6 +21,11 @@ spring:
     user:
       name: "Rahul"
       password: "12345"
+input:
+  type: array
+  items:
+    type: int
+    values: 5,8,3,2,9,7,10
       
 
 
