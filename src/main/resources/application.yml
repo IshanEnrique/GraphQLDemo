@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: DSA-PRACTICE
+  profiles:
+    active: log4j
 
   mvc:
     view:
@@ -25,7 +27,7 @@ input:
   type: array
   items:
     type: int
-    values: 5,8,3,2,9,7,10
+    values: 5,8,3,2,9,7,10,29,51,15,56,25,71,17,18,72,19
       
 
 

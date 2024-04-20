@@ -1,19 +1,53 @@
 package com.bharatkadam.dsa.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public interface BaseTree {
     public default void preOrderTraverse(Tree.Node<?> root){
-        // System.out.println("\n\n>>>>>>>>>>>> PRE-ORDER TRAVERSING STARTED : \n");
         if(null!=root){
-            System.out.print(root.data +" , ");
+            System.out.print(root.data +"  ");
             preOrderTraverse(root.left);
             preOrderTraverse(root.right);
         }
-        // System.out.println("\n\n<<<<<<<<<<<<<<<<< PRE-ORDER TRAVERSING TERMINATED : ");
-
     }
-    // public void postOrderTraverse(Tree.Node<?> root);
-    // public void inOrderTraverse(Tree.Node<?> root);
-    // public void levelOrderTraverse(Tree.Node<?> root);
+    public default void postOrderTraverse(Tree.Node<?> root){
+        if(null!=root){
+            postOrderTraverse(root.left);
+            postOrderTraverse(root.right);
+            System.out.print(root.data +"  ");
+        }
+    }
+    public default void inOrderTraverse(Tree.Node<?> root){
+        if(null!=root){
+            inOrderTraverse(root.left);
+            System.out.print(root.data +"  ");
+            inOrderTraverse(root.right);
+        }
+    }
+    public default void levelOrderTraverse(Tree.Node<?> root){
+        if(null!=root){
+            Queue<Tree.Node<?>> queue= new LinkedList<>();
+            queue.add(root);
+            queue.add(null);
+            while(!queue.isEmpty()){
+                Tree.Node<?> node=queue.remove();
+                if(null==node){
+                    System.out.println();
+                    queue.add(null);
+                }else{
+
+                }
+                System.out.print(node.data +"  ");
+                if(null!=node.left){
+                    queue.add(node.left);
+                }
+                if(null!=node.right){
+                    queue.add(node.right);
+                }
+            }
+        }
+    }
     // public void breadthFirstTraverse(Tree.Node<?> root);
     // public boolean isBalanced(Tree.Node<?> root);
     // public boolean isComplete(Tree.Node<?> root);
