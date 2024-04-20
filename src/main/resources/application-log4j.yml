@@ -1,0 +1,9 @@
+logging:
+  file.name: logs/DSA.log
+  pattern:
+    console: "%d [%t] %-5level %logger{36} - %msg%n"
+    file: "%d [%t] %-5level %logger{36} - %msg%n"
+  level:
+    # com.m2evorah: DEBUG
+    org.springframework: info
+    # org.hibernate: DEBUG
