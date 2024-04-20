@@ -25,8 +25,8 @@ public class DSAApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		LOGGER.info("\n Input : {} ",input);
 		BinaryTree binaryTree=new BinaryTree();
-		binaryTree.root=binaryTree.createBinaryTree(input.getItems().getValues());
-		// input.getItems().getValues().stream().forEach((data)-> binaryTree.insert(binaryTree.root, data));
+		// binaryTree.root=binaryTree.createBinaryTree(input.getItems().getValues());
+		input.getItems().getValues().stream().forEach((data)-> binaryTree.insert(binaryTree.root, data));
 		BinaryTree.traverse(binaryTree);
 
 

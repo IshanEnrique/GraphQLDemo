@@ -3,10 +3,14 @@ package com.bharatkadam.dsa.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public interface BaseTree {
+    public static Logger LOGGER=LoggerFactory.getLogger(BaseTree.class);
     public default void preOrderTraverse(Tree.Node<?> root){
         if(null!=root){
-            System.out.print(root.data +"  ");
+            LOGGER.info(root.data +"  ");
             preOrderTraverse(root.left);
             preOrderTraverse(root.right);
         }
@@ -15,35 +19,39 @@ public interface BaseTree {
         if(null!=root){
             postOrderTraverse(root.left);
             postOrderTraverse(root.right);
-            System.out.print(root.data +"  ");
+            LOGGER.info(root.data +"  ");
         }
     }
     public default void inOrderTraverse(Tree.Node<?> root){
         if(null!=root){
             inOrderTraverse(root.left);
-            System.out.print(root.data +"  ");
+            LOGGER.info("{}  ",root.data );
             inOrderTraverse(root.right);
         }
     }
     public default void levelOrderTraverse(Tree.Node<?> root){
         if(null!=root){
             Queue<Tree.Node<?>> queue= new LinkedList<>();
+            StringBuilder message=new StringBuilder();
             queue.add(root);
             queue.add(null);
             while(!queue.isEmpty()){
                 Tree.Node<?> node=queue.remove();
                 if(null==node){
-                    System.out.println();
-                    queue.add(null);
+                    message.append("\n");
+                    LOGGER.info(message.toString());
+                    if(!queue.isEmpty()){
+                        queue.add(null);
+                        message=new StringBuilder();
+                    }
                 }else{
-
-                }
-                System.out.print(node.data +"  ");
-                if(null!=node.left){
-                    queue.add(node.left);
-                }
-                if(null!=node.right){
-                    queue.add(node.right);
+                    message.append(node.data+"  ");
+                    if(null!=node.left){
+                        queue.add(node.left);
+                    }
+                    if(null!=node.right){
+                        queue.add(node.right);
+                    }
                 }
             }
         }

@@ -15,23 +15,17 @@ public class BinaryTree extends Tree implements BaseTree{
     public  <T> Node<?> createBinaryTree(List<T> data){
         Integer position=size;
         if(null==position){
-            LOGGER.info("Postion null : initialized with -1");
             position=-1;
         }
         position++;
-        LOGGER.info("current position : "+position);
         if(CollectionUtils.isEmpty(data)|| position>=data.size()||null==data.get(position))
         {
-            LOGGER.info("returning due to : CollectionUtils.isEmpty(data) : "+(CollectionUtils.isEmpty(data))+" , position>=data.size() : "+(position>=data.size())+(position>=data.size()?" , POSITION IS HIGH FROM SIZE ":" , null==data.get(position) : "+(null==data.get(position))));
             return null;
         }
         Tree.Node<?> node=createNode(data.get(position));
-        LOGGER.info("New node created : data : ["+node.data+"]"+" , position : "+position+" \n CALLING LEFT SUBTREE");
         size=position;
         node.left=createBinaryTree(data);
-        LOGGER.info(node.left==null?"LEFT NODE FOUND NULL":"LEFT node created : data : ["+node.left.data+"]"+" , position : "+position+" \n CALLING RIGHT SUBTREE");
         node.right=createBinaryTree(data);
-        LOGGER.info(node.right==null?"RIGHT NODE FOUND NULL":"RIGHT node created : data : ["+node.right.data+"]"+" , position : "+position+" \n RETURNING ");
         return node;
     }
     public static void traverse(BinaryTree binaryTree){
@@ -43,17 +37,17 @@ public class BinaryTree extends Tree implements BaseTree{
 		binaryTree.preOrderTraverse(binaryTree.root);
         LOGGER.info("\n\n<<<<<<<<<<<<<<<<< PRE-ORDER TRAVERSING TERMINATED : ");
 
-        // LOGGER.info("\n\n>>>>>>>>>>>> POST-ORDER TRAVERSING STARTED : \n");
-		// binaryTree.postOrderTraverse(binaryTree.root);
-        // LOGGER.info("\n\n<<<<<<<<<<<<<<<<< POST-ORDER TRAVERSING TERMINATED : ");
+        LOGGER.info("\n\n>>>>>>>>>>>> POST-ORDER TRAVERSING STARTED : \n");
+		binaryTree.postOrderTraverse(binaryTree.root);
+        LOGGER.info("\n\n<<<<<<<<<<<<<<<<< POST-ORDER TRAVERSING TERMINATED : ");
 
-        // LOGGER.info("\n\n>>>>>>>>>>>> IN-ORDER TRAVERSING STARTED : \n");
-		// binaryTree.inOrderTraverse(binaryTree.root);
-        // LOGGER.info("\n\n<<<<<<<<<<<<<<<<< IN-ORDER TRAVERSING TERMINATED : ");
+        LOGGER.info("\n\n>>>>>>>>>>>> IN-ORDER TRAVERSING STARTED : \n");
+		binaryTree.inOrderTraverse(binaryTree.root);
+        LOGGER.info("\n\n<<<<<<<<<<<<<<<<< IN-ORDER TRAVERSING TERMINATED : ");
 
-        // LOGGER.info("\n\n>>>>>>>>>>>> LEVEL-ORDER TRAVERSING STARTED : \n");
-		// binaryTree.levelOrderTraverse(binaryTree.root);
-        // LOGGER.info("\n\n<<<<<<<<<<<<<<<<< LEVEL-ORDER TRAVERSING TERMINATED : ");
+        LOGGER.info("\n\n>>>>>>>>>>>> LEVEL-ORDER TRAVERSING STARTED : \n");
+		binaryTree.levelOrderTraverse(binaryTree.root);
+        LOGGER.info("\n\n<<<<<<<<<<<<<<<<< LEVEL-ORDER TRAVERSING TERMINATED : ");
     }
 
 @Override
