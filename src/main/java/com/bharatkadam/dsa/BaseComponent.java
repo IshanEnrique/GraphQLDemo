@@ -45,6 +45,7 @@ public class BaseComponent {
                                                     classInstance.getDeclaredMethod(methodName, List.class).invoke(
                                                     classInstance.getDeclaredConstructor().newInstance(null),new ArrayList<>(List.copyOf(in)));
                                                 } catch (Exception e) {
+                                                    e.printStackTrace();
                                                    LOGGER.error(e.getMessage());
                                                 }
                                             });

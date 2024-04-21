@@ -1,7 +1,7 @@
 config:
   props:
     -
-      active: true
+      active: false
       package-name: com.bharatkadam.dsa.tree.
       classess: BinaryTree
       exclusions: 1
@@ -11,5 +11,19 @@ config:
       input:
         array:
           -
+            - 5,8,3,2,9,7,10,29,51,15,56,25,71,17,18,72,19
+            - 5,4,3,2,1,0
+    -
+      active: true
+      package-name: com.bharatkadam.dsa.sorting.
+      classess: BubbleSort,InsertionSort
+      exclusions: 0,1
+      method: apply
+      type: sorting
+      execution-on-input-type: array
+      input:
+        array:
+          -
+            - 0,1,2,3,4,5
             - 5,8,3,2,9,7,10,29,51,15,56,25,71,17,18,72,19
             - 5,4,3,2,1,0

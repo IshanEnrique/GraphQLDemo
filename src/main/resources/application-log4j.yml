@@ -1,9 +1,10 @@
 logging:
-  file.name: logs/DSA.log
+  file.name: logs/${spring.application.name}.log
   pattern:
     console: "%d [%t] %-5level %logger{36} - %msg%n"
     file: "%d [%t] %-5level %logger{36} - %msg%n"
   level:
     # com.m2evorah: DEBUG
-    org.springframework: info
+    org.springframework: INFO
+    com.bharatkadam.dsa: INFO
     # org.hibernate: DEBUG
