@@ -1,14 +1,23 @@
 package com.bharatkadam.dsa.tree;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BinaryTree extends Tree implements BaseTree{
-   private static Logger LOGGER=LoggerFactory.getLogger(BinaryTree.class);
+   private static final Logger LOGGER=LoggerFactory.getLogger(BinaryTree.class);
    public Tree.Node<?> root;
+   @Override
+   public void apply(List<?> input) {
+    String className=this.getClass().getSimpleName();
+    LOGGER.info("\n**************** This is from {} started. \n\n",className);
+    input.stream().forEach(data->insert(null, data));
+    traverse(this);
+    LOGGER.info("\n**************** This is from {} completed. \n\n",className);
+   }
     public static void traverse(BinaryTree binaryTree){
         if(null==binaryTree|| null==binaryTree.root){
             LOGGER.info(">>>>>>>>>>> \n\n\n NOTHING TO TRAVERSE IN THE GIVEN BINARY TREE. ");

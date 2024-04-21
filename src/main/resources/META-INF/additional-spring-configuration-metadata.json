@@ -1,17 +1,2 @@
 {"properties": [
-  {
-    "name": "input.type",
-    "type": "java.lang.String",
-    "description": "A description for 'input.type'"
-  },
-  {
-    "name": "input.items.values",
-    "type": "java.lang.String",
-    "description": "A description for 'input.items.values'"
-  },
-  {
-    "name": "input.items.type",
-    "type": "java.lang.String",
-    "description": "A description for 'input.items.type'"
-  }
 ]}

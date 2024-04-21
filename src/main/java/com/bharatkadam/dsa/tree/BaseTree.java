@@ -6,7 +6,9 @@ import java.util.Queue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public interface BaseTree {
+import com.bharatkadam.dsa.domain.Base;
+
+public interface BaseTree extends Base{
     public static Logger LOGGER=LoggerFactory.getLogger(BaseTree.class);
     public default void preOrderTraverse(Tree.Node<?> root){
         if(null!=root){

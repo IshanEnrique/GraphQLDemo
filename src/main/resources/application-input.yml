@@ -1,5 +1,15 @@
-input:
-  type: array
-  items:
-    type: int
-    values: 5,8,3,2,9,7,10,29,51,15,56,25,71,17,18,72,19
+config:
+  props:
+    -
+      active: true
+      package-name: com.bharatkadam.dsa.tree.
+      classess: BinaryTree
+      exclusions: 1
+      method: apply
+      type: sorting
+      execution-on-input-type: array
+      input:
+        array:
+          -
+            - 5,8,3,2,9,7,10,29,51,15,56,25,71,17,18,72,19
+            - 5,4,3,2,1,0
